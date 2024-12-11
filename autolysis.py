@@ -224,7 +224,10 @@ Provide links to:
             messages=[
                 {"role": "system", "content": "You are a data analyst."}, 
                 {"role": "user", "content": narrative_prompt}
-            ]
+            ],
+            max_tokens=150,
+            temperature=0.3,
+            
         )
         narrative = response['choices'][0]['message']['content']
         readme_path = os.path.join(output_dir, "README.md")
